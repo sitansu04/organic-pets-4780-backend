@@ -1,6 +1,10 @@
 const express = require("express");
 const moment = require("moment");
-const { sendMail } = require("../controller/mail");
+const { sendMail } = require("../controller/mail.js");
+const cors = require("cors");
+
+const app=express();
+app.use(cors());
 
 let notifyBeforeRouter = express.Router();
 
