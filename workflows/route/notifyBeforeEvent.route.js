@@ -31,7 +31,10 @@ notifyBeforeRouter.post("/workflow/notifyhost/:beforetime", (req, res) => {
     setTimeout(() => {
       sendMail(subject, body, userMail);
     }, sendingNotificationMailSec);
-    res.send("workflow created");
+    res.send({
+      msg:"Created",
+      remaining:sendingNotificationMailSec
+    });
   } else {
     res.status(400);
     res.send("The time you selected is not valid.");
