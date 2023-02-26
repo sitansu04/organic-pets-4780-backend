@@ -3,13 +3,7 @@ const { Usermodel } = require("../models/user.model");
 const userRouter = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const redis = require("redis");
 
-const client = redis.createClient();
-
-client.on("error", (err) => console.log("Redis Client Error", err));
-
-client.connect();
 
 require("dotenv").config();
 
